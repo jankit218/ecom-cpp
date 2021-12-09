@@ -1,0 +1,23 @@
+
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/cpp/myproj
+hooks:
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 100
+      runas: ubuntu
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 100
+      runas: ubuntu
+  ApplicationStart:
+    - location: ./run.sh
+      timeout: 100
+      runas: ubuntu
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 100
+      runas: ubuntu
