@@ -48,7 +48,7 @@
     <a class="navbar-brand waves-effect" href="{% url 'home' %}">
       <img class="ml-0 pl-0" style="height: 60px;" src="{% static 'logo-black.svg' %}" alt="Logo">
     </a>
-    <h3 style="color:coral"><strong>Canny Lass Store</strong></h3>
+    <h3 style="color:orange"><strong>Canny Lass Store</strong></h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -64,12 +64,12 @@
     <ul class="navbar-nav nav-flex-icons">
       {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link waves-effect" href="#">Hello, {{request.user.username}}
+          <a class="nav-link waves-effect" href="#">Welcome, {{request.user.username}}
           </a>
         </li>
         <li class="nav-item">
         <a href="{% url 'order_summary' %}" class="nav-link waves-effect">
-            <span class="badge red z-depth-1 mr-1">{{ request.user|cart_item_count}}</span>
+            <span class="badge orange z-depth-1 mr-1">{{ request.user|cart_item_count}}</span>
             <i class="fas fa-shopping-cart"></i>
             <span class="clearfix d-none d-sm-inline-block"> Cart </span>
         </a>

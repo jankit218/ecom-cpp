@@ -46,7 +46,8 @@
               {% endif %}
               <td>{{order_item.get_final_price}}
                 {% if order_item.item.discount_price %}
-                  <span class="badge badge-pill badge-info">{{order_item.get_amount_saved}}</span>
+                  <span>&nbsp;&nbsp;</span>
+                  <span class="badge badge-pill badge-info" style="background-color: orange !important;">Saved: {{order_item.get_amount_saved}}</span>
                 {% endif %}
                 <a href="{{order_item.item.get_remove_from_cart_url}}">
                   <span style="color: red;" class="float-right">

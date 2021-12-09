@@ -23,11 +23,12 @@
                 <h5>Image</h5>
               </a>
               <h5>
-                <a href="{% url 'product' object.slug %}" class="dark-grey-text">{{object.title}}</a>
+                <a href="{% url 'product' object.slug %}" class="orange-text">{{object.title}}</a>
               </h5>
               <h4>
                 {% if object.discount_price %}
                   ${{object.discount_price}}
+                  <span style="font-size: small; color: gray"><del>${{object.price}}</del></span>
                 {% else %}
                   ${{object.price}}
                 {% endif %}
