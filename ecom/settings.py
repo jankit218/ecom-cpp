@@ -6,7 +6,7 @@ SECRET_KEY = 'q*c39*ez7-hj$$_rf=3wedpg*)$5a0(z5zu%vca-ua3dy%ig+s'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'buteksonline.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
