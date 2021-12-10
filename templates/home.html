@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="h-25">
+<div class="h-25" style="background-color: #EEE;" >
 </div>
-<main>
+<main style="background-color: #EEE;">
   <div class="container">
     <section class="text-center mb-4 mt-3">
       <div class="row wow fadeIn">
 
         {% for object in object_list %}
         <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
+          <div class="card" style="background-color: aliceblue;">
             <div class="view overlay">
               <img src="{{object.image.url}}" class="card-img-top" alt="">
               <a href="{% url 'product' object.slug %}">
@@ -20,10 +20,10 @@
             <div class="card-body text-center">
               <a href="" class="grey-text">
                 <!-- <h5>{{object.get_category_display}}</h5> -->
-                <h5>Image</h5>
+                <!-- <h5>Image</h5> -->
               </a>
               <h5>
-                <a href="{% url 'product' object.slug %}" class="orange-text">{{object.title}}</a>
+                <a href="{% url 'product' object.slug %}" class="royalblue-text">{{object.title}}</a>
               </h5>
               <h4>
                 {% if object.discount_price %}
