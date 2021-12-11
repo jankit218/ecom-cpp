@@ -14,5 +14,5 @@ sudo chown ubuntu:ubuntu *
 
 echo "Running the application"
 cd /home/ubuntu/cpp/myproj
-python3 manage.py runserver 0.0.0.0:80 >> /dev/null 2>&1 &
+python3 manage.py runserver 0.0.0.0:8000 >> /dev/null 2>&1 &
 
