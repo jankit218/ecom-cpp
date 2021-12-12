@@ -27,10 +27,10 @@
               </h5>
               <h4>
                 {% if object.discount_price %}
-                  ${{object.discount_price}}
-                  <span style="font-size: small; color: gray"><del>${{object.price}}</del></span>
+                  €{{object.discount_price}}
+                  <span style="font-size: small; color: gray"><del>€{{object.price}}</del></span>
                 {% else %}
-                  ${{object.price}}
+                  €{{object.price}}
                 {% endif %}
               </h4>
             </div>

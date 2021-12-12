@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
 from .models import Item, Order, OrderItem, Address, Payment, Coupon
 from .forms import AddressForm, CouponForm
+from csv_logger_pkg.csvlogger import csvlogger
 
 import stripe
 import json
@@ -198,6 +199,9 @@ class CouponView(View):
 
 @login_required
 def add_to_cart(request, slug):
+    csv = csvlogger()
+    csv.write_log("1", is_debug_mode_on=True)
+    
     item = get_object_or_404(Item, slug=slug)
     order_item, created = OrderItem.objects.get_or_create(
         item=item,
