@@ -6,6 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
+
+from catalog.sendmail import SendEmailService
 from .models import Item, Order, OrderItem, Address, Payment, Coupon
 from .forms import AddressForm, CouponForm
 from csv_logger_pkg.csvlogger import csvlogger
@@ -114,8 +116,9 @@ class CheckoutView(View):
             if payment_option == "S":
                 return redirect('payment', payment_option="stripe")
 
-            if payment_option == "P":
-                return redirect('payment', payment_option="paypal")
+            # Send Email using - AWS SES
+            s = SendEmailService()
+            s.SendMail(order.payment)
             messages.info(self.request, "Invalid payment option")
             # Logger library called for logging
             csv.write_log("Debug", debug="CheckoutView - post - function Exit", is_debug_mode_on=debug_mode)

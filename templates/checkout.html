@@ -10,14 +10,6 @@
     <div class="row">
       <div class="col-md-8 mb-4">
         <div class="card">
-<!-- 
-          <form action="" method="POST">
-            {% csrf_token %}
-            {{form|crispy}}
-            <button type="submit" class="btn btn-info">Submit</button>
-          </form> -->
-
-
           <form class="card-body" method="POST">
             {% csrf_token %}
             <div class="md-form mb-5">
@@ -46,15 +38,6 @@
               </div>
             </div>
             <hr>
-            <!-- <div class="custom-control custom-checkbox">
-              <input type="checkbox" name="save_info" class="custom-control-input" id="save_info">
-              <label class="custom-control-label" for="save_info">Save as default address</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" name="use_default" class="custom-control-input" id="use_default">
-              <label class="custom-control-label" for="use_default">Use default address : {{address.street_address}}, {{address.apartment_address}}, {{address.country}}</label>
-            </div>
-            <hr> -->
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
                 <input id="stripe" value="S" name="payment_option" type="radio" class="custom-control-input">
